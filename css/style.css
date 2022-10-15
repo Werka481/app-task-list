@@ -27,27 +27,8 @@ html {
     margin: 20px;
 }
 
-.form {
-    background-color: #fff;
-    border: 1px solid #ccc;
-    margin: 20px;
-    padding: 20px;
-}
-
-.form__input {
-    padding: 10px;
-    max-width: 600px;
-}
-
-.form__button {
-    padding: 10px;
-    background-color: teal;
-    border: 1px solid teal;
-    color: #fff;
-}
-
 .list {
-    padding: 28px;
+    padding: 20px;
     margin: 20px;
     margin-top: 0px;
     background-color: #fff;

@@ -13,9 +13,10 @@
     <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;700&display=swap" rel="stylesheet">
     <link href="css/style.css" rel="stylesheet">
     <link href="css/grid.css" rel="stylesheet">
+    <link href="css/form.css" rel="stylesheet">
     <script defer src="js/script.js"></script>
     <title>Lista zadań - aplikacja</title>
-    <link rel="icon" href="images/logo.png">
+    <link rel="icon" href="images/icon.png">
     <meta property="og:image" content="images/share.png">
 </head>
 
@@ -23,14 +24,14 @@
     <h1 class="header">Lista zadań</h1>
     <div class="container1">
         <p class="paragraph">Dodaj nowe zadanie</p>
-        <form class="form container1__item">
-            <input class="form__input" name="task" placeholder="Co jest do zrobienia?"> <button
-                class="form__button">Dodaj zadanie</button>
+        <form class="form container1__item js-form">
+            <input class="form__input js-input" name="task" placeholder="Co jest do zrobienia?"> <button
+                class="form__button js-button">Dodaj zadanie</button>
         </form>
     </div>
     <div class="container2">
         <p class="paragraph">Lista zadań</p>
-        <ul class="list"></ul>
+        <ul class="list js-list"></ul>
     </div>
 </body>
 
