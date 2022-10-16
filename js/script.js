@@ -7,19 +7,19 @@
         });
 
         render();
-    }
+    };
 
     const removeTask = (index) => {
         tasks.splice(index, 1);
 
         render();
-    }
+    };
 
     const toggleTaskDone = (index) => {
         tasks[index].done = !tasks[index].done;
 
         render();
-    }
+    };
 
     const render = () => {
         let htmlString = "";
@@ -27,9 +27,11 @@
         for (const newTask of tasks) {
             htmlString += `
             <li class= "container2__item">
+            
             <button class="button js-done button--done">
             ${newTask.done ? "✓" : ""}
             </button>
+
             <span class="list__item ${newTask.done ? "list__item--done" : ""}">
             ${newTask.content}
             </span> 
@@ -41,6 +43,10 @@
 
         document.querySelector(".js-list").innerHTML = htmlString;
 
+        bindEvents();
+    };
+
+    const bindEvents = () => {
         const removeButtons = document.querySelectorAll(".js-remove");
 
         removeButtons.forEach((removeButton, index) => {
@@ -56,23 +62,40 @@
                 toggleTaskDone(index);
             })
         })
-
-    };
+    }
 
     const onFormSubmit = (event) => {
         event.preventDefault();
 
         const newTask = document.querySelector(".js-input").value.trim();
+        const buttonAddTask = document.querySelector(".js-button");
 
         if (newTask === "") {
             return;
         }
 
         addTasks(newTask);
+        resetInput(newTask, buttonAddTask);
+    };
+
+    const resetInput = (newTask, buttonAddTask) => {
+        buttonAddTask.addEventListener("click", () => {
+            newTask.reset();
+        })
+    };
+
+    const addFocus = () => {
+        const taskField = document.querySelector(".js-input");
+        const buttonAddTask = document.querySelector(".js-button");
+
+        buttonAddTask.addEventListener("click", () => {
+            taskField.focus();
+        })
     };
 
     const init = () => {
         render();
+        addFocus();
 
         const form = document.querySelector(".js-form");
 
