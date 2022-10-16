@@ -11,7 +11,13 @@
 
     const removeTask = (index) => {
         tasks.splice(index, 1);
-        
+
+        render();
+    }
+
+    const toggleTaskDone = (index) => {
+        tasks[index].done = !tasks[index].done;
+
         render();
     }
 
@@ -20,11 +26,13 @@
 
         for (const newTask of tasks) {
             htmlString += `
-            <li class= "container2__item list__item">
-            <button class="button js-done button__task ${newTask.done ? "button__task--done" : ""}">
+            <li class= "container2__item">
+            <button class="button js-done button--done">
+            ${newTask.done ? "✓" : ""}
             </button>
-            
+            <span class="list__item ${newTask.done ? "list__item--done" : ""}">
             ${newTask.content}
+            </span> 
         
             <button class="button button--remove js-remove">🗑️</button>
             </li>
@@ -40,6 +48,15 @@
                 removeTask(index);
             })
         })
+
+        const toggleDoneButtons = document.querySelectorAll(".js-done");
+
+        toggleDoneButtons.forEach((toggleDoneButton, index) => {
+            toggleDoneButton.addEventListener("click", () => {
+                toggleTaskDone(index);
+            })
+        })
+
     };
 
     const onFormSubmit = (event) => {
