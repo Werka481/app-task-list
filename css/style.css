@@ -23,14 +23,7 @@ html {
     font-weight: bold;
     background-color: #fff;
     border: 1px solid #ccc;
-    padding: 20px;
+    padding: 22px;
     margin: 20px;
-}
-
-.list {
-    padding: 20px;
-    margin: 20px;
-    margin-top: 0px;
-    background-color: #fff;
-    border: 1px solid #ccc;
+    margin-bottom: 0px;
 }

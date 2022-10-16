@@ -1,0 +1,30 @@
+.list {
+    padding: 28px;
+    margin: 20px;
+    margin-top: 0px;
+    background-color: #fff;
+    border: 1px solid #ccc;
+    list-style-type: none;
+}
+
+.button {
+    width: 30px;
+    height: 30px;
+    color: #fff;
+}
+
+.button__task {
+    background-color: #137413;
+    margin-right: 10px;
+    border: 1px solid #137413;
+}
+
+.button__task--done {
+    text-decoration: line-through;
+}
+
+.button--remove {
+    background-color: crimson;
+    margin-left: 11px;
+    border: 1px solid crimson;
+}
