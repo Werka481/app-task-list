@@ -70,12 +70,12 @@
         const newTask = document.querySelector(".js-input").value.trim();
         const buttonAddTask = document.querySelector(".js-button");
 
-        if (newTask === "") {
-            return;
+        if (newTask !== "") {
+          resetInput(newTask, buttonAddTask);  
         }
 
         addTasks(newTask);
-        resetInput(newTask, buttonAddTask);
+        
     };
 
     const resetInput = (newTask, buttonAddTask) => {
