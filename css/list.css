@@ -7,20 +7,20 @@
     list-style-type: none;
 }
 
+.list__item--done {
+    text-decoration: line-through;
+}
+
 .button {
     width: 30px;
     height: 30px;
     color: #fff;
 }
 
-.button__task {
+.button--done {
     background-color: #137413;
     margin-right: 10px;
     border: 1px solid #137413;
-}
-
-.button__task--done {
-    text-decoration: line-through;
 }
 
 .button--remove {
