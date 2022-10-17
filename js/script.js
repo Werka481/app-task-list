@@ -70,18 +70,11 @@
         const newTask = document.querySelector(".js-input").value.trim();
         const buttonAddTask = document.querySelector(".js-button");
 
-        if (newTask !== "") {
-          resetInput(newTask, buttonAddTask);  
+        if (newTask.trim() !== "") {
+            addTasks(newTask);
+            newTask.value = "";
+            newTask.focus();
         }
-
-        addTasks(newTask);
-        
-    };
-
-    const resetInput = (newTask, buttonAddTask) => {
-        buttonAddTask.addEventListener("click", () => {
-            newTask.reset();
-        })
     };
 
     const addFocus = () => {
