@@ -23,8 +23,24 @@
     border: 1px solid #137413;
 }
 
+.button--done:hover {
+    background-color: hsl(120, 72%, 35%);
+}
+
+.button--done:active {
+    background-color: hsl(120, 72%, 40%);
+}
+
 .button--remove {
     background-color: crimson;
     margin-left: 11px;
     border: 1px solid crimson;
+}
+
+.button--remove:hover {
+    background-color: hsl(348, 83%, 55%);
+}
+
+.button--remove:active {
+    background-color: hsl(348, 83%, 60%);
 }
