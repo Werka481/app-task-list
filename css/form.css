@@ -15,4 +15,9 @@
     background-color: teal;
     border: 1px solid teal;
     color: #fff;
+    transition: 1s;
+}
+
+.form__button:hover {
+    transform: scale(1.2);
 }
