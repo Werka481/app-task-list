@@ -21,6 +21,7 @@
     background-color: #137413;
     margin-right: 10px;
     border: 1px solid #137413;
+    transition: 1s;
 }
 
 .button--done:hover {
@@ -35,6 +36,7 @@
     background-color: crimson;
     margin-left: 11px;
     border: 1px solid crimson;
+    transition: 1s;
 }
 
 .button--remove:hover {
