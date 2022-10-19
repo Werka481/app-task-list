@@ -1,0 +1,18 @@
+.taskButton {
+    background-color: #fff;
+    padding: 10px;
+    font-size: 15px;
+    border: none;
+    color: teal;
+    transition: 1s;
+}
+
+.taskButton:hover {
+    color: hsl(180, 100%, 40%);
+}
+
+.taskButton--hidden {
+    background-color: #fff;
+    border: none;
+    padding: 0px;
+}

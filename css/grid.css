@@ -61,4 +61,22 @@
         padding: 15px;
     }
 }
+ .container__buttons {
+    display: grid;
+    grid-template-columns: 1fr 0.8fr;
+    grid-column-gap: 13px;
+    align-items: center;
+ }
 
+ @media (max-width: 767px) {
+    .container__buttons {
+        display: grid;
+        grid-template-columns: auto;
+        grid-template-rows: 1fr 2fr;
+    }
+
+    .container__buttons--items {
+        display: grid;
+        align-items: center;
+    }
+ }

@@ -15,6 +15,7 @@
     <link href="css/grid.css" rel="stylesheet">
     <link href="css/form.css" rel="stylesheet">
     <link href="css/list.css" rel="stylesheet">
+    <link href="css/buttons.css" rel="stylesheet">
     <script defer src="js/script.js"></script>
     <title>Lista zadań - aplikacja</title>
     <link rel="icon" href="images/icon.png">
@@ -27,11 +28,11 @@
         <p class="paragraph">Dodaj nowe zadanie</p>
         <form class="form container1__item js-form">
             <input class="form__input js-input" name="task" placeholder="Co jest do zrobienia?" autofocus> <button
-                class="form__button js-button">Dodaj zadanie</button>
+                class="form__button">Dodaj zadanie</button>
         </form>
     </div>
     <div class="container2">
-        <p class="paragraph">Lista zadań</p>
+        <p class="paragraph container__buttons">Lista zadań <span class="js-button container__buttons--items"></span></p>
         <ul class="list js-list"></ul>
     </div>
 </body>
