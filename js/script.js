@@ -37,7 +37,16 @@
         hideDoneTasks = !hideDoneTasks;
 
         render();
-    }
+    };
+
+    const markAllTasksCompleted = () => {
+        tasks = tasks.map((task) => ({
+            ...task,
+            done: true,
+        }));
+
+        render();
+    };
 
     const renderTasks = () => {
         let htmlString = "";
@@ -72,7 +81,7 @@
 
         taskButton.innerHTML = `
             <button class="js-button js-hiden ${!tasks.length ? "taskButton--hidden" : "taskButton"}">
-            ${tasks.done && !hideDoneTasks ? "Pokaż" : "Ukryj"} ukończone
+            ${ tasks.done ? "Ukryj" : "Pokaż"} ukończone
             </button>
 
             <button class="js-button js-finished ${!tasks.length ? "taskButton--hidden" : "taskButton"}">
@@ -84,8 +93,26 @@
     const render = () => {
         renderTasks();
         renderButtons();
-
+        bindButtonsEvents();
         bindEvents();
+    };
+
+    const bindButtonsEvents = () => {
+        const hideTaskButton = document.querySelector(".js-hiden");
+
+        if (hideTaskButton) {
+            hideTaskButton.addEventListener("click", () => {
+                toggleHideDoneTask();
+            })
+        };
+
+        const finishedTaskButton = document.querySelector(".js-finished");
+
+        if (finishedTaskButton) {
+            finishedTaskButton.addEventListener("click", () => {
+                markAllTasksCompleted();
+            })
+        };
     };
 
     const bindEvents = () => {
