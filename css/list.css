@@ -7,6 +7,12 @@
     list-style-type: none;
 }
 
+.list--hiden {
+    display: none;
+    color: #fff;
+    background-color: #fff;
+}
+
 .list__item--done {
     text-decoration: line-through;
 }

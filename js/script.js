@@ -2,10 +2,10 @@
     let tasks = [];
     let hideDoneTasks = false;
 
-    const addTasks = (newTask) => {
+    const addTasks = (task) => {
         tasks = [
             ...tasks,
-            { content: newTask },
+            { content: task },
         ];
 
         render();
@@ -51,16 +51,16 @@
     const renderTasks = () => {
         let htmlString = "";
 
-        for (const newTask of tasks) {
+        for (const task of tasks) {
             htmlString += `
-            <li class= "container2__item">
+            <li class= "container2__item ${task.done && hideDoneTasks ? "list--hiden" : ""}">
             
             <button class="button js-done button--done">
-            ${newTask.done ? "✓" : ""}
+            ${task.done ? "✓" : ""}
             </button>
 
-            <span class="list__item ${newTask.done ? "list__item--done" : ""}">
-            ${newTask.content}
+            <span class="list__item ${task.done ? "list__item--done" : ""}">
+            ${task.content}
             </span> 
         
             <button class="button button--remove js-remove">🗑️</button>
@@ -81,10 +81,11 @@
 
         taskButton.innerHTML = `
             <button class="js-button js-hiden ${!tasks.length ? "taskButton--hidden" : "taskButton"}">
-            ${ tasks.done ? "Ukryj" : "Pokaż"} ukończone
+            ${!hideDoneTasks ? "Ukryj" : "Pokaż"} ukończone
             </button>
 
-            <button class="js-button js-finished ${!tasks.length ? "taskButton--hidden" : "taskButton"}">
+            <button class="js-button js-finished ${!tasks.length ? "taskButton--hidden" : "taskButton"}
+            ${tasks.every(({done}) => done) ? "disabled" : ""}">
             Ukończ wszystkie
             </button>
             `;
@@ -136,14 +137,14 @@
     const onFormSubmit = (event) => {
         event.preventDefault();
 
-        const newTaskElement = document.querySelector(".js-input");
-        const newTask = newTaskElement.value.trim();
+        const taskElement = document.querySelector(".js-input");
+        const task = taskElement.value.trim();
 
-        if (newTask !== "") {
-            addTasks(newTask);
-            newTaskElement.value = "";
+        if (task !== "") {
+            addTasks(task);
+            taskElement.value = "";
         }
-        newTaskElement.focus();
+        taskElement.focus();
     };
 
     const init = () => {
