@@ -7,7 +7,7 @@ https://werka481.github.io/app-task-list/
 ## Description
 The app allows you to add a to-do list. You can mark each task as done. You can also delete a task from the list. There is also a button in the application that hides or shows completed tasks. There is also a button responsible for completing all tasks at the same time. After all tasks are completed, the button becomes inactive. I invite you to watch the instructions.
 
-![instruction gif]()
+![instruction gif](images/task-list.gif)
 ## Technologies used:
 1. BEM
 2. CSS Flex-box
