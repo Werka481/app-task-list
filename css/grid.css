@@ -61,14 +61,15 @@
         padding: 15px;
     }
 }
- .container__buttons {
+
+.container__buttons {
     display: grid;
     grid-template-columns: 1fr 0.8fr;
     grid-column-gap: 13px;
     align-items: center;
- }
+}
 
- @media (max-width: 767px) {
+@media (max-width: 767px) {
     .container__buttons {
         display: grid;
         grid-template-columns: auto;
@@ -79,4 +80,4 @@
         display: grid;
         align-items: center;
     }
- }
+}

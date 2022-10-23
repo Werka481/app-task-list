@@ -53,7 +53,7 @@
 
         for (const task of tasks) {
             htmlString += `
-            <li class= "container2__item ${task.done && hideDoneTasks ? "list--hiden" : ""}">
+            <li class= "container2__item ${task.done && hideDoneTasks ? "list--hidden" : ""}">
             
             <button class="button js-done button--done">
             ${task.done ? "✓" : ""}
@@ -80,12 +80,12 @@
         }
 
         taskButton.innerHTML = `
-            <button class="js-button js-hiden ${!tasks.length ? "taskButton--hidden" : "taskButton"}">
+            <button class="js-button js-hidden ${!tasks.length ? "taskButton--hidden" : "taskButton"}">
             ${!hideDoneTasks ? "Ukryj" : "Pokaż"} ukończone
             </button>
 
             <button class="js-button js-finished ${!tasks.length ? "taskButton--hidden" : "taskButton"}"
-            ${tasks.every(({done}) => done) ? "disabled" : ""}>
+            ${tasks.every(({ done }) => done) ? "disabled" : ""}>
             Ukończ wszystkie
             </button>
             `;
@@ -99,7 +99,7 @@
     };
 
     const bindButtonsEvents = () => {
-        const hideTaskButton = document.querySelector(".js-hiden");
+        const hideTaskButton = document.querySelector(".js-hidden");
 
         if (hideTaskButton) {
             hideTaskButton.addEventListener("click", () => {
@@ -132,7 +132,7 @@
                 toggleTaskDone(index);
             })
         })
-    }
+    };
 
     const onFormSubmit = (event) => {
         event.preventDefault();

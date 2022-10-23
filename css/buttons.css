@@ -7,8 +7,16 @@
     transition: 1s;
 }
 
+.taskButton:disabled {
+    color: #ccc;
+}
+
 .taskButton:hover {
     color: hsl(180, 100%, 40%);
+}
+
+.taskButton:active {
+    color: hsl(180, 100%, 55%);
 }
 
 .taskButton--hidden {
